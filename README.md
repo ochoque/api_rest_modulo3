@@ -27,10 +27,10 @@ fecha_nacimiento date);*
 
 En este archivo se guarda la informacion de la connecion a la base de datos, por lo que se debera adecuar al servidor en uso, bajo la siguiente estructura:
 
-*PG_HOST = `'localhost'`
-PG_USER = `'postgres'`
-PG_PASSWORD = `'postgres'`
-PG_DB = `'db_api_flask'`*
+* PG_HOST = `'localhost'`
+* PG_USER = `'postgres'`
+* PG_PASSWORD = `'postgres'`
+* PG_DB = `'db_api_flask'`
 
 
 
@@ -74,14 +74,16 @@ Tomando en cuenta que la api esta en un servidor render.com se procedera de la s
 * Obtener información de todos los usuarios:  
 `GET https://proyecto-modulo3.onrender.com/usuarios` 
 
-* Obtener información de un usuario  en particular (por No. de cedula de identidad):
+* Obtener información de un usuario  en particular (por No. de cedula de identidad): 
 `GET https://proyecto-modulo3.onrender.com/usuarios/:1234` 
 
 * Dar de alta un usuario:  
-`POST https://proyecto-modulo3.onrender.com/usuarios` con payload
+`POST https://proyecto-modulo3.onrender.com/usuarios` 
+con el payload
 
 * Actualizar la información de un usuario existente:  
-`PUT https://proyecto-modulo3.onrender.com/usuarios/:1234` con payload 
+`PUT https://proyecto-modulo3.onrender.com/usuarios/:1234` 
+con el payload 
 
 * Eliminar un usuario  
 `DELETE https://proyecto-modulo3.onrender.com/usuarios/:1234`
