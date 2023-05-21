@@ -75,7 +75,8 @@ Tomando en cuenta que la api esta en un servidor render.com se procedera de la s
 `GET https://proyecto-modulo3.onrender.com/usuarios` 
 
 * Obtener información de un usuario  en particular (por No. de cedula de identidad): 
-  `GET https://proyecto-modulo3.onrender.com/usuarios/:1234` 
+
+    `GET https://proyecto-modulo3.onrender.com/usuarios/:1234` 
 
 * Dar de alta un usuario:  
 `POST https://proyecto-modulo3.onrender.com/usuarios` 
@@ -92,6 +93,7 @@ con el payload
 `GET https://proyecto-modulo3.onrender.com/usuarios/:1234`
 
 * Mostra version del api rest:
-`GET https://proyecto-modulo3.onrender.com/estado`
+  
+    `GET https://proyecto-modulo3.onrender.com/estado`
 
 
