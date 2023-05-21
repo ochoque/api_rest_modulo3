@@ -1,13 +1,15 @@
+##MODELO PARA REALIZAR LAS DISTINTAS CONSULTAS
+##
 from flask import jsonify, request
 from modelo.coneccion import db_connection
 
-#funcion que busca a un determinado usuario,  borrar
+#funcion que busca a un determinado usuario: reporte y   borrar
 def buscar_usuario(codigo):
     try:
         conn = db_connection()
         cur = conn.cursor()
         cur.execute("""select cedula_identidad,nombre,primer_apellido,segundo_apellido,
-        to_char(fecha_nacimiento,'YYYY/MM/DD') as fecha_nacimiento FROM usuarios WHERE cedula_identidad = %s""", (codigo,))
+        to_char(fecha_nacimiento,'YYYY-MM-DD') as fecha_nacimiento FROM usuarios WHERE cedula_identidad = %s""", (codigo,))
         datos = cur.fetchone()
         conn.close()
         if datos != None:
@@ -27,7 +29,7 @@ class UsuarioModel():
             conn = db_connection()
             cur = conn.cursor()
             cur.execute("""select cedula_identidad,nombre,primer_apellido,segundo_apellido,
-             to_char(fecha_nacimiento,'YYYY/MM/DD') as fecha_nacimiento from usuarios""")
+             to_char(fecha_nacimiento,'YYYY-MM-DD') as fecha_nacimiento from usuarios""")
             datos = cur.fetchall()
             usuarios = []
             for fila in datos:
@@ -85,6 +87,30 @@ class UsuarioModel():
                 return jsonify({'mensaje': "Usuario no encontrado.", 'exito': False})
         except Exception as ex:
             return jsonify({'mensaje': "Error", 'exito': False})
+
+    @classmethod
+    def actualizar_usuario(self,codigo):
+        try:
+            usuario = buscar_usuario(codigo)
+            if usuario != None:
+                conn = db_connection()
+                cur = conn.cursor()
+                cur.execute("""UPDATE usuarios SET nombre=%s, primer_apellido=%s, segundo_apellido=%s,
+                fecha_nacimiento=%s WHERE cedula_identidad=%s""",
+                        (request.json['nombre'], request.json['primer_apellido'], request.json['segundo_apellido'], request.json['fecha_nacimiento'], codigo))
+                conn.commit()
+                conn.close()
+                return jsonify({'mensaje': "Usuario actualizado.", 'exito': True})
+            else:
+                return jsonify({'mensaje': "Usuario no encontrado.", 'exito': False})
+        except Exception as ex:
+                return jsonify({'mensaje': "Error", 'exito': False})
+
+
+
+
+
+
 
     @classmethod
     def promedio_edad(self):
