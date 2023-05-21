@@ -106,12 +106,6 @@ class UsuarioModel():
         except Exception as ex:
                 return jsonify({'mensaje': "Error", 'exito': False})
 
-
-
-
-
-
-
     @classmethod
     def promedio_edad(self):
         try:
