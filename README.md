@@ -92,7 +92,7 @@ con el payload
 * Muestra el  prodmedio de edades de todos los usuario:  
 `GET https://proyecto-modulo3.onrender.com/usuarios/promedio-edad`
 
-* Mostrar la version del api rest:
+* Muestra la version del api rest:
   
     `GET https://proyecto-modulo3.onrender.com/estado`
 
