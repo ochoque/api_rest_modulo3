@@ -8,7 +8,9 @@ app = Flask(__name__)
 
 # HABILITAR EL INTERCAMBIO DE RECUROS  DE ORIGEN CRUZADOS para las peticiones
 # GET, POST, DELETE, PUT en especial
-CORS(app, resources={r"/usuarios/*": {"origins": "http://http://localhost"}})
+#CORS(app, resources={r"/usuarios/*": {"origins": "http://http://localhost"}})
+CORS(app, resources={r"/usuarios/*": {"origins": "https://proyecto-modulo3.onrender.com"}})
+
 
 # RUTA PARA PETICION GET
 @app.route('/usuarios', methods=['GET'])
@@ -35,7 +37,7 @@ def eliminar_curso(codigo):
     return x
 
 # RUTA PARA PETICION PUT actualiza usuario
-@app.route('/usuarios/<codigo>', methods=['PUT'])
+@app.route('/usuarios/:<codigo>', methods=['PUT'])
 def actulalizar_usuario(codigo):
     x= UsuarioModel.actualizar_usuario(codigo)
     return x

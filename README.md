@@ -44,7 +44,7 @@ Ejemplo de serialización de un `Usuario`:
     "cedula_identidad": 12345,
     "nombre": "Jose Luis",
     "primer_apellido": "Espinoza",
-    "segundo_apellido": "Rodriguez"
+    "segundo_apellido": "Rodriguez",
     "fecha_nacimiento": "1970-11-12"
 }
 ``
@@ -89,10 +89,10 @@ con el payload
 * Eliminar un usuario  
 `DELETE https://proyecto-modulo3.onrender.com/usuarios/:1234`
 
-* Mostrar prodmeio de edades de todos los usuario:  
-`GET https://proyecto-modulo3.onrender.com/usuarios/:1234`
+* Muestra el  prodmedio de edades de todos los usuario:  
+`GET https://proyecto-modulo3.onrender.com/usuarios/promedio-edad`
 
-* Mostra version del api rest:
+* Mostrar la version del api rest:
   
     `GET https://proyecto-modulo3.onrender.com/estado`
 
