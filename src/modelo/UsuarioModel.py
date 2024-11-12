@@ -9,7 +9,7 @@ def buscar_usuario(codigo):
         conn = db_connection()
         cur = conn.cursor()
         cur.execute("""select cedula_identidad,nombre,primer_apellido,segundo_apellido,
-        to_char(fecha_nacimiento,'YYYY-MM-DD') as fecha_nacimiento FROM usuarios WHERE cedula_identidad = %s""", (codigo,))
+        fecha_nacimiento FROM usuarios WHERE cedula_identidad = %s""", (codigo,))
         datos = cur.fetchone()
         conn.close()
         if datos != None:
