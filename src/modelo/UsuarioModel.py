@@ -70,7 +70,7 @@ class UsuarioModel():
                 conn.close()
                 return jsonify({'mensaje': "Usuario registrado.", 'exito': True})
         except Exception as ex:
-            return jsonify({'mensaje': "Error", 'exito': False})
+            return jsonify({'mensaje': "Errorx", 'exito': False})
 
     @classmethod
     def eliminar_usuario(self,codigo):
