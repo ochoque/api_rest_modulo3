@@ -42,7 +42,7 @@ class UsuarioModel():
             conn.close()
             return jsonify({'usuarios': usuarios, 'mensaje': "Usuarios listados.", 'exito': True})
         except Exception as ex:
-            return jsonify({'mensaje': "Errorr", 'exito': False})
+            return jsonify({'mensaje': "Errorrxxxx", 'exito': False})
 
     @classmethod
     def lista_usuario(self,codigo):
